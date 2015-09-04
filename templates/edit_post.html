@@ -1,0 +1,14 @@
+<a href="{{ url_for('admin') }}"><< back</a>
+
+<form action="{{ url_for('edit_helper', post=post.id) }}" method="post" class="edit-entry">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" name="title" value="{{ post.title }}">
+    </div>
+     <div class="form-group">
+        <label for="url">Title</label>
+        <input type="text" class="form-control" name="url" value="{{ post.url }}">
+    </div>
+    <textarea class="form-control" name="text" rows="5" cols="40">{{ post.text }}</textarea>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

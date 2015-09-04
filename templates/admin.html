@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block body %}
+    <a href="{{ url_for('logout') }}">Logout</a>
+    <form action="{{ url_for('add_entry') }}" method="post" class="add-entry">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" name="title">
+    </div>
+     <div class="form-group">
+        <label for="url">Title</label>
+        <input type="text" class="form-control" name="url">
+    </div>
+    <textarea class="form-control" name="text" rows="5" cols="40"></textarea>
+    <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+<table class="table">
+    <tr>
+        <th>id</th>
+        <th>title</th>
+        <th>url</th>
+        <th>text</th>
+        <th>actions</th>
+    </tr>
+    {% for post in posts %}
+    <tr>
+        <td>{{ post.id }}</td>
+        <td>{{ post.title }}</td>
+        <td>{{ post.url }}</td>
+        <td>{{ post.text }}</td>
+        <td>
+            <a href="{{ url_for('edit_post', post=post.id) }}">edit</a>
+            | <a href="{{ url_for('delete_helper', post=post.id) }}">delete</a>
+        </td>
+    </tr>
+  {% endfor %}
+
+</table>
+{% endblock %}

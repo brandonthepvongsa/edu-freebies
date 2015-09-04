@@ -1,0 +1,19 @@
+body {
+  padding-top: 50px;
+}
+
+p {
+    color: #3b3b42;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+a:hover, a:link, a:active, a:visited {
+    text-decoration: none;
+}
+
+.panel-default:hover {
+    border-color: #6e8b68;
+}
